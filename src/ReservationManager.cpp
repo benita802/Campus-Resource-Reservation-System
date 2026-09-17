@@ -28,7 +28,7 @@ void ReservationManager::loadReservations(const string& filename) {
 
         int resID;
         int stuID;
-        int resrcID;
+        string resrcID;
 
         string stuName;
         string date;
