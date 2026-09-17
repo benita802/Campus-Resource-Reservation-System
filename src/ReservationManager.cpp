@@ -28,8 +28,8 @@ void ReservationManager::loadReservations(const string& filename) {
 
         int resID;
         int stuID;
-        string resrcID;
 
+        string resrcID;
         string stuName;
         string date;
         string value;
@@ -42,8 +42,7 @@ void ReservationManager::loadReservations(const string& filename) {
 
         getline(ss, stuName, '|');
 
-        getline(ss, value, '|');
-        resrcID = stoi(value);
+        getline(ss, resrcID, '|');
 
         getline(ss, date);
 
