@@ -23,12 +23,14 @@ int main() {
         cout << " 1: View Resources       " << endl;
         cout << " 2: Create Reservation   " << endl;
         cout << " 3: Cancel Reservation   " << endl;
-        cout << " 4: View Waiting Lists   " << endl;
-        cout << " 5: Undo Cancellation    " << endl;
-        cout << " 6: Search Reservations  " << endl;
-        cout << " 7: Sort Resources       " << endl;
-        cout << " 8: Generate Report      " << endl;
-        cout << " 9: Exit                 " << endl;
+        cout << " 4: Add Student to Waiting List    " << endl;
+        cout << " 5: Remove Student from Waiting List" << endl;
+        cout << " 6: View Waiting List              " << endl;
+        cout << " 7: Undo Cancellation              " << endl;
+        cout << " 8: Search Reservations            " << endl;
+        cout << " 9: Sort Resources                 " << endl;
+        cout << "10: Generate Report               " << endl;
+        cout << "11: Exit                          " << endl;
 
         cout << "Enter Choice: ";
         cin >> choice;
@@ -104,25 +106,42 @@ int main() {
             }
 
 
-            case 4:
-                //  Waiting list belongs to WaitingList,
-                // not ReservationManager.
-                waitingList.displayWaitingList();
+            case 4: {
+                string studentID;
+
+                cout << "Enter Student ID: ";
+                cin >> studentID;
+
+                waitingList.addStudent(studentID);
+
+                cout << "Student added to waiting list." << endl;
                 break;
+            }
 
 
-            case 5:
-                if (reservation.restoreLastCancelled()) {
+            case 5: {
+                waitingList.removeStudent();
+                break;
+            }
+
+
+            case 6: {     
+                waitingList.displayWaitingList();
+                break;           
+            }
+
+
+            case 7:
+                if (reservation.restoreLastCancelled()){
                     cout << "Cancellation undone successfully." << endl;
                 }
-                else {
-                    cout << "Unable to undo cancellation." << endl;
+                else{
+                    cout<<" Undo failed." << endl;
                 }
                 break;
 
 
-            case 6: {
-                //  findReservation() needs a reservation ID.
+            case 8: {
                 int reservationID;
 
                 cout << "Enter Reservation ID to search: ";
@@ -134,15 +153,15 @@ int main() {
                 if (found != nullptr) {
                     cout << "\n--- Reservation Found ---" << endl;
                     cout << "Reservation ID: "
-                         << found->getReservationID() << endl;
+                        << found->getReservationID() << endl;
                     cout << "Student ID: "
-                         << found->getStudentID() << endl;
+                        << found->getStudentID() << endl;
                     cout << "Student Name: "
-                         << found->getStudentName() << endl;
+                        << found->getStudentName() << endl;
                     cout << "Resource ID: "
-                         << found->getResourceID() << endl;
+                        << found->getResourceID() << endl;
                     cout << "Reservation Date: "
-                         << found->getReservationDate() << endl;
+                        << found->getReservationDate() << endl;
                 }
                 else {
                     cout << "Reservation not found." << endl;
@@ -152,31 +171,32 @@ int main() {
             }
 
 
-            case 7:
-                cout << "Sort Resources not implemented yet." << endl;
+            case 9:
+                resource.sortResourcesByName();
+                resource.displayResources();
                 break;
 
-
-            case 8:
+            case 10: {
                 reservation.displayActiveReservations();
                 break;
+            }
 
-
-            case 9:
+            case 11: {
                 reservation.saveReservations("data/reservations.txt");
                 cout << "Reservations saved." << endl;
                 cout << "Exiting program." << endl;
                 break;
+            }
 
 
             default:
-                cout << "Invalid menu option. Please enter 1-9." << endl;
+                cout << "Invalid menu option. Please enter 1-11." << endl;
                 break;
         }
 
         cout << endl;
 
-    } while (choice != 9);
+    } while (choice !=11);
 
     return 0;
 }
