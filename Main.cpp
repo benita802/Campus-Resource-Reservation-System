@@ -126,8 +126,32 @@ int main() {
 
 
             case 6: {     
-                waitingList.displayWaitingList();
-                break;           
+                int reservationID;
+
+                cout << "Enter Reservation ID: ";
+                cin >> reservationID;
+
+                Reservation* found = reservationManager.linearSearch(reservationID);
+
+                if (found != nullptr) {
+
+                    cout << "\nReservation Found!" << endl;
+
+                    cout << "Reservation ID: " << found->getReservationID() << endl;
+
+                    cout << "Student ID: " << found->getStudentID() << endl;
+    
+                    cout << "Student Name: " << found->getStudentName() << endl;
+
+                    cout << "Resource ID: " << found->getResourceID() << endl;
+
+                    cout << "Reservation Date: " << found->getReservationDate() << endl;
+                }
+                else {
+                    cout << "Reservation not found." << endl;
+                }
+
+                break;
             }
 
 
