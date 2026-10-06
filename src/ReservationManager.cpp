@@ -247,3 +247,15 @@ bool ReservationManager::reservationExists(int reservationID) const {
 
     return false;
 }
+//Linear Search for rservationID.
+Reservation* ReservationManager::linearSearch(int reservationID) {
+    Node* current = head;
+
+    while (current != nullptr) {
+        if(current->reservation.getReservationID() == reservationID) {
+            return &(current->reservation);
+        }
+        current = current->next;
+    }
+    return nullptr;
+}
