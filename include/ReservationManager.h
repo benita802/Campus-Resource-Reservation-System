@@ -45,8 +45,8 @@ public:
     void displayActiveReservations() const;
     void displayCancellationHistory() const;
 
-    //Search.
-    Reservation* findReservation(int reservationID);
+    //Linear Search.
+    Reservation* linearSearch(int reservationID);
 };
 
 #endif
