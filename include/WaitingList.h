@@ -14,7 +14,7 @@ private:
     map<string, queue<string>> students;
 
 public:
-    void addStudent(string& resourceID, string& studentID);
+    void addStudent(string& resourceID, string studentID);
     void removeStudent(string& resourceID);
     void displayWaitingList() const;
     map<string, int> countWaitingPerResource() const;
