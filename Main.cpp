@@ -144,11 +144,9 @@ int main () {
                 }
           break;
 
-<<<<<<< HEAD
-        case 8: {
-=======
+
         case 8: 
->>>>>>> cdc1e296677553b5de54747862e0bff9bed540f0
+
             int reservationID;
 
                 cout << "Enter Reservation ID to search: ";
@@ -220,17 +218,14 @@ int main () {
             waitingList.displayWaitingList();
             auto waitingStats = waitingList.countWaitingPerResource();
 
-            for (auto& w : waitingStats) {
-            cout << "Resource ID: " << w.first
-            << " | Students Waiting: " << w.second << endl;
-            }
-<<<<<<< HEAD
+            for (const Resource& res : allResources) {
+                string id = res.getResourceID();
+
+                cout << "Resource ID: " << id << " | Students Waiting: " << waitingStats[id] << endl;
+}
             break;
         } 
         
-=======
-        break;
->>>>>>> cdc1e296677553b5de54747862e0bff9bed540f0
 
         case 11: 
                 reservation.saveReservations("data/reservations.txt");
