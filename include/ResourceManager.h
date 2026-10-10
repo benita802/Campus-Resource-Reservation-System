@@ -20,7 +20,7 @@ public:
     void displayResources();
     void displayAvailability();
     void sortResourcesByName();
-    vector<Resource>& getAllResources() const;
+    const vector<Resource>& getAllResources() const;
 };
 
 #endif // RESOURCE_MANAGER_H
