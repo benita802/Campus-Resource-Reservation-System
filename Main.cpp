@@ -119,7 +119,7 @@ int main () {
             break;
 
         case 7:
-         if (reservation.restoreLastCancelled()){
+             if (reservation.restoreLastCancelled()){
                     cout << "Cancellation undone successfully." << endl;
                 }
                 else{
@@ -127,7 +127,7 @@ int main () {
                 }
           break;
 
-        case 8: //possible changes here
+        case 8: 
             int reservationID;
 
                 cout << "Enter Reservation ID to search: ";
@@ -155,7 +155,7 @@ int main () {
             break; 
 
         case 9:
-           resource.sortResourcesByName(); // possible changes here
+           resource.sortResourcesByName(); 
                 resource.displayResources();
             break;  
 
@@ -166,7 +166,7 @@ int main () {
             cout << "-------- Active Reservations --------" << endl;
             reservation.displayActiveReservations();
 
-              // Resources Utilization
+            // Resources Utilization
             cout << "--- Resource Utilization ---" << endl;
 
             auto utilization = reservation.countReservationsPerResource();
@@ -178,15 +178,15 @@ int main () {
 
             cout << "Resource ID: " << id
              << " | Name: " << res.getResourceName()
-            << " | Reservations: " << count << endl;
-            }
+             << " | Reservations: " << count << endl;
+             }
 
             cout << "--- Most Requested Resources ---" << endl;
 
             vector<pair<string,int>> sorted(utilization.begin(), utilization.end());
 
             sort(sorted.begin(), sorted.end(),
-              [](auto& a, auto& b) { return a.second > b.second; });
+            [](auto& a, auto& b) { return a.second > b.second; });
 
             for (auto& entry : sorted) {
             cout << "Resource ID: " << entry.first
@@ -195,14 +195,14 @@ int main () {
             
             //waiting-list data maintained by your system.
             cout << "------ Waiting List------- " << endl;
-             waitingList.displayWaitingList();
-             auto waitingStats = waitingList.countWaitingPerResource();
+            waitingList.displayWaitingList();
+            auto waitingStats = waitingList.countWaitingPerResource();
 
             for (auto& w : waitingStats) {
-                cout << "Resource ID: " << w.first
-                    << " | Students Waiting: " << w.second << endl;
+            cout << "Resource ID: " << w.first
+            << " | Students Waiting: " << w.second << endl;
             }
-                break;
+        break;
 
         case 11: 
                 reservation.saveReservations("data/reservations.txt");
