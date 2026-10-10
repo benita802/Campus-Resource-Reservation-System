@@ -4,6 +4,7 @@
 
 #include <stack>
 #include <string>
+#include <map>
 #include "Reservation.h"
 
 using namespace std;
@@ -47,9 +48,13 @@ public:
 
     //Linear Search.
     Reservation* linearSearch(int reservationID);
+    Reservation* findReservation(int reservationID);
 
     //for report
     map<string, int> countReservationsPerResource() const;
+
 };
+
+#endif
 
 #endif
