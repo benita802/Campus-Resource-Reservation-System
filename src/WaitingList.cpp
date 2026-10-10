@@ -38,4 +38,15 @@ void WaitingList::displayWaitingList() const {
             temp.pop();
         }   
     }
-}    
+} 
+//Count stud waiting for each resource
+map<string, int> WaitingList::countWaitingPerResource() const {
+
+    map<string, int> counts;
+
+    for (const auto& entry : students) {
+        counts[entry.first] = entry.second.size();
+    }
+
+    return counts;
+}
