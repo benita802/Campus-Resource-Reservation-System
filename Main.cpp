@@ -167,14 +167,31 @@ int main () {
             reservation.displayActiveReservations();
 
               // Resources Utilization
-            cout << "-------- Resource Utilization -------- " << endl;
+            cout << "\n--- Resource Utilization ---" << endl;
+
             auto utilization = reservation.countReservationsPerResource();
-            resource.displayResources();
-            
-            for (auto& r : utilization) {
-                cout << "Resource ID: " << r.first
-                 << " | Reservations: " << r.second << endl;
+            const auto& allResources = resource.getAllResources();
+
+            for (const Resource& res : allResources) {
+            string id = res.getResourceID();
+            int count = utilization[id];  // 0 if not present
+
+            cout << "Resource ID: " << id
+             << " | Name: " << res.getResourceName()
+            << " | Reservations: " << count << endl;
             }
+
+            cout << "\n--- Most Requested Resources ---" << endl;
+
+            vector<pair<string,int>> sorted(utilization.begin(), utilization.end());
+
+            sort(sorted.begin(), sorted.end(),
+              [](auto& a, auto& b) { return a.second > b.second; });
+
+            for (auto& entry : sorted) {
+            cout << "Resource ID: " << entry.first
+            << " | Requests: " << entry.second << endl;
+}           
             
             //waiting-list data maintained by your system.
             cout << "------ Waiting List------- " << endl;
