@@ -115,7 +115,7 @@ void ResourceManager::merge(int left, int mid, int right){
         j++;
     }
 
-        for (int k = 0; k < temp.size(); k++) {
+        for (size_t k = 0; k < temp.size(); k++) {
         resources[left + k] = temp[k];
     }
 }
@@ -125,4 +125,3 @@ const vector<Resource>& ResourceManager::getAllResources() const {
 }
 
 
-}
