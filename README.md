@@ -1,5 +1,6 @@
 # Campus-Resource-Reservation-System
 In this project, your team will develop a Campus Resource Reservation System that allows users to reserve campus resources, manage waiting lists, track reservation history, and generate reports.
+
 •	Project1/
 •	│
 •	├── include/
@@ -19,3 +20,34 @@ In this project, your team will develop a Campus Resource Reservation System tha
 •	│
 •	├── README.txt
 •	└── .gitignore
+
+# Features
+**Reservation Management**
+Create new reservations
+Cancel existing reservations
+Undo the most recent cancellation (stack‑based undo)
+Search reservations 
+View all active reservations
+
+**Resource Management**
+Load resources from file
+Display all resources
+Sort resources alphabetically
+Track usage counts
+
+**Waiting List Management**
+Add students to waiting lists
+Remove students from waiting lists
+Display waiting lists
+Track waiting‑list statistics
+
+**Reporting**
+Active reservation report
+Resource utilization report
+Most requested resources
+Waiting‑list statistics
+
+**Files**
+Load resources from data/resources.txt
+Load reservations from data/reservations.txt
+Save updated reservations on exit
