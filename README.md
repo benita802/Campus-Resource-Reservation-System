@@ -24,7 +24,7 @@ In this project, your team will develop a Campus Resource Reservation System tha
 •	├── README.txt
 •	└── .gitignore
 
-## 🚀 Stretch Features
+## 🚀 Features
 **Reservation Management**
 Create new reservations
 Cancel existing reservations
