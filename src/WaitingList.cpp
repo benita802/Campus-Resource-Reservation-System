@@ -3,18 +3,18 @@
 
 using namespace std;
 
-void WaitingList::addStudent(string studentID){
-    students.push(studentID); 
+void WaitingList::addStudent(string& resourceID,string studentID){
+    students[resourceID].push(studentID); 
 }
 
-void WaitingList::removeStudent(){
-    if (students.empty()) {
+void WaitingList::removeStudent(string& resourceID){
+    if (students[resourceID].empty()) {
         cout << "Waiting list is empty." <<endl;
         return;
     }
 
-    cout << "Removing Student: " << students.front() <<endl;
-    students.pop();
+    cout << "Removing Student: " << students[resourceID].front() <<endl;
+    students[resourceID].pop();
 }
 void WaitingList::displayWaitingList() const {
     if (students.empty()) {
@@ -24,10 +24,18 @@ void WaitingList::displayWaitingList() const {
 
     cout << "--- Waiting List ---" << endl;
 
-    queue<string> temp = students;
+    for (const auto& entry : students) {
+        cout << "Resource " << entry.first << ":" << endl;
 
-    while (!temp.empty()) {
-        cout << temp.front() << endl;
-        temp.pop();
+        queue<string> temp = entry.second;
+        if (temp.empty()) {
+            cout << "  (empty)" << endl;
+            continue;
+        }
+
+        while (!temp.empty()) {
+            cout << "  " << temp.front() << endl;
+            temp.pop();
+        }   
     }
-}
+}    

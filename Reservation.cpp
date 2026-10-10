@@ -13,7 +13,6 @@ Reservation::Reservation {
     const string& studentName 
 
 }
-
     // Setters
     void Reservation::setStudentName(const string& name) {
         studentName = name;

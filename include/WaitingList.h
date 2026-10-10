@@ -3,19 +3,21 @@
 
 #include <queue>
 #include <string>
+#include <map>
 
 using namespace std;
 
-// Manages studnets waiting for campus resources
+// Manages students waiting for campus resources
 
 class WaitingList {
 private:
-    queue<string> students;
+    map<string, queue<string>> students;
 
 public:
-    void addStudent(string studentID);
-    void removeStudent();
+    void addStudent(string& resourceID, string& studentID);
+    void removeStudent(string& resourceID);
     void displayWaitingList() const;
+    map<string, int> countWaitingPerResource() const;
 };
 
 #endif // WAITING_LIST_H  
