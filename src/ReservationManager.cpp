@@ -249,30 +249,32 @@ bool ReservationManager::reservationExists(int reservationID) const {
     return false;
 }
 //Linear Search for reservationID.
+
+ //Linear Search for reservationID.
 Reservation* ReservationManager::linearSearch(int reservationID) {
     Node* current = head;
 
     while (current != nullptr) {
-        if(current->reservation.getReservationID() == reservationID) {
+        if (current->reservation.getReservationID() == reservationID) {
             return &(current->reservation);
         }
         current = current->next;
     }
+
     return nullptr;
+}
 
-    // for report 
-    map<string, int> ReservationManager::countReservationsPerResource() const {
+// Count reservations for each resource
+map<string, int> ReservationManager::countReservationsPerResource() const {
     map<string, int> counts;
-
     Node* current = head;
 
     while (current != nullptr) {
         string resourceID = current->reservation.getResourceID();
-        counts[resourceID]++;   // increment count for this resource
+        counts[resourceID]++;
         current = current->next;
     }
 
     return counts;
 }
 
-}
