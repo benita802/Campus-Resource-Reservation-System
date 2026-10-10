@@ -74,8 +74,7 @@ void ResourceManager::displayAvailability() {
 void ResourceManager::sortResourcesByName(){
     if (resources.size() >1){
         mergeSort(0, resources.size() -1);
-    
-    }
+        }
 }
 
 void ResourceManager::mergeSort(int left, int right){
@@ -116,11 +115,14 @@ void ResourceManager::merge(int left, int mid, int right){
         j++;
     }
 
-    for (int k = 0; k < temp.size(); k++) {
+        for (int k = 0; k < temp.size(); k++) {
         resources[left + k] = temp[k];
     }
-    vector<Resource>& ResourceManager::getAllResources() const {
+}
+
+const vector<Resource>& ResourceManager::getAllResources() const {
     return resources;
 }
+
 
 }
