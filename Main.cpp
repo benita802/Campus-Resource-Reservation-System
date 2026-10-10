@@ -119,7 +119,7 @@ int main () {
             break;
 
         case 7:
-         if (reservation.restoreLastCancelled()){
+             if (reservation.restoreLastCancelled()){
                     cout << "Cancellation undone successfully." << endl;
                 }
                 else{
@@ -127,7 +127,7 @@ int main () {
                 }
           break;
 
-        case 8: //possible changes here
+        case 8: 
             int reservationID;
 
                 cout << "Enter Reservation ID to search: ";
@@ -155,7 +155,7 @@ int main () {
             break; 
 
         case 9:
-           resource.sortResourcesByName(); // possible changes here
+           resource.sortResourcesByName(); 
                 resource.displayResources();
             break;  
 
@@ -202,7 +202,7 @@ int main () {
                 cout << "Resource ID: " << w.first
                     << " | Students Waiting: " << w.second << endl;
             }
-                break;
+        break;
 
         case 11: 
                 reservation.saveReservations("data/reservations.txt");
