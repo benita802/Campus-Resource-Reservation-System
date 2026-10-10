@@ -7,16 +7,19 @@
 
 using namespace std;
 
-// Manages the campus resource inventory
-
+// Manages campus resource inventory
 class ResourceManager {
 private:
     vector<Resource> resources;
-    
+
+    void mergeSort(int left, int right);
+    void merge(int left, int mid, int right);
+
 public:
-    void loadResources( string filename);
+    void loadResources(string filename);
     void displayResources();
     void displayAvailability();
+    void sortResourcesByName();
 };
 
 #endif // RESOURCE_MANAGER_H

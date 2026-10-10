@@ -5,13 +5,13 @@
 using namespace std;
 
 
-Reservation::Reservation {
-    int reservationID
-    int studentID
-    int resourceID
-    const string& reservationDate
-    const string& studentName 
+Reservation::Reservation(int reservationID, int studentID, const string& studentName, const string& resourceID,const string& reservationDate) {
 
+    this->reservationID = reservationID;
+    this->studentID = studentID;
+    this->studentName = studentName;
+    this->resourceID = resourceID;
+    this->reservationDate = reservationDate;
 }
     // Setters
     void Reservation::setStudentName(const string& name) {
@@ -34,7 +34,7 @@ Reservation::Reservation {
         return studentName;
     }
 
-    int Reservation::getResourceID() const {
+    string Reservation::getResourceID() const {
         return resourceID;
     }
 

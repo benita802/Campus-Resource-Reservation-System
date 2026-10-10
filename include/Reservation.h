@@ -10,13 +10,13 @@ class Reservation {
 private:
     int reservationID;
     int studentID;
-    int resourceID;
-    string studentName:
+    string resourceID;
+    string studentName;
     string reservationDate; // mm/dd/yyyy
 
 public:
     // constructor
-    Reservation(int reservationID,int studentID,const string& studentName, int resourceID,const string& reservationDate);
+    Reservation(int reservationID,int studentID,const string& studentName,const string& resourceID,const string& reservationDate);
 
     // Setters
     void setStudentName(const string& name);
@@ -26,7 +26,7 @@ public:
     int getReservationID() const;
     int getStudentID() const;
     string getStudentName() const;
-    int getResourceID() const;
+    string getResourceID() const;
     string getReservationDate() const;
 
 };
