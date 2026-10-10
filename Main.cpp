@@ -145,7 +145,7 @@ int main () {
           break;
 
 
-        case 8: 
+        case 8: {
 
             int reservationID;
 
@@ -172,7 +172,7 @@ int main () {
                     cout << "Reservation not found." << endl;
                 }
             break;
-        
+        }
 
         case 9:
            resource.sortResourcesByName(); 
