@@ -47,6 +47,9 @@ public:
 
     //Linear Search.
     Reservation* linearSearch(int reservationID);
+
+    //for report
+    map<string, int> countReservationsPerResource() const;
 };
 
 #endif

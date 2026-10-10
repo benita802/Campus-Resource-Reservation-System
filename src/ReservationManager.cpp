@@ -1,5 +1,6 @@
 #include "ReservationManager.h"
 #include <iostream>
+#include <map>
 #include <fstream>
 #include <sstream>
 
@@ -247,7 +248,7 @@ bool ReservationManager::reservationExists(int reservationID) const {
 
     return false;
 }
-//Linear Search for rservationID.
+//Linear Search for reservationID.
 Reservation* ReservationManager::linearSearch(int reservationID) {
     Node* current = head;
 
@@ -258,4 +259,20 @@ Reservation* ReservationManager::linearSearch(int reservationID) {
         current = current->next;
     }
     return nullptr;
+
+    // for report 
+    map<string, int> ReservationManager::countReservationsPerResource() const {
+    map<string, int> counts;
+
+    Node* current = head;
+
+    while (current != nullptr) {
+        string resourceID = current->reservation.getResourceID();
+        counts[resourceID]++;   // increment count for this resource
+        current = current->next;
+    }
+
+    return counts;
+}
+
 }

@@ -167,7 +167,7 @@ int main () {
             reservation.displayActiveReservations();
 
               // Resources Utilization
-            cout << "\n--- Resource Utilization ---" << endl;
+            cout << "--- Resource Utilization ---" << endl;
 
             auto utilization = reservation.countReservationsPerResource();
             const auto& allResources = resource.getAllResources();
@@ -181,7 +181,7 @@ int main () {
             << " | Reservations: " << count << endl;
             }
 
-            cout << "\n--- Most Requested Resources ---" << endl;
+            cout << "--- Most Requested Resources ---" << endl;
 
             vector<pair<string,int>> sorted(utilization.begin(), utilization.end());
 
